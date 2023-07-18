@@ -1,10 +1,11 @@
 import React from 'react'
-import { AppBar,Container,Toolbar,Typography,Select,MenuItem } from "@material-ui/core";
+import { AppBar,Container,Toolbar,Typography,Select,MenuItem, Button } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import Avatar from '@material-ui/core/Avatar';
 import { useHistory } from 'react-router-dom';
 import icon from "../images/3888px-Cryptocurrency_Logo.svg.png";
 import { CryptoState } from '../CryptoContext';
+
 
 const useStyles=makeStyles(() => ({
   title:
@@ -60,6 +61,12 @@ const Header = () => {
               INR
             </MenuItem>
           </Select>
+          <Button 
+  color="inherit" 
+  onClick={() => history.push("./login")}
+>
+  Login
+</Button>
 
         </Toolbar>
       </Container>
