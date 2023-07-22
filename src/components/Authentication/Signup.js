@@ -14,7 +14,17 @@ const Signup = ({ handleClose }) => {
 
   const { setAlert } = CryptoState();
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async () => {
+    if (password !== confirmPassword) {
+      setAlert({
+        open: true,
+        message: "Passwords do not match",
+        type: "error",
+      });
+      return;
+    }
+
+  };
   
 
   return (

@@ -5,7 +5,7 @@ import LoginPage from './components/login';
 import Homepage from "./Pages/Homepage";
 import coinPage from "./Pages/coinPage";
 import { makeStyles } from '@material-ui/core';
-
+import Alert from "./components/Alert";
 function App() {
 
   const useStyles=makeStyles(() => ({
@@ -27,6 +27,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
 
       </div>
+      <Alert />
     </BrowserRouter>
  
   );
