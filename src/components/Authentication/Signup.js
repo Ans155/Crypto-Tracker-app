@@ -5,6 +5,9 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
 const Signup = ({ handleClose }) => {
+  const customStyles = {
+    color: 'red',
+  };
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -27,6 +30,9 @@ const Signup = ({ handleClose }) => {
         variant="outlined"
         type="email"
         label="Enter Email"
+        InputProps={{
+          style: customStyles,
+        }}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         fullWidth
@@ -35,6 +41,9 @@ const Signup = ({ handleClose }) => {
         variant="outlined"
         label="Enter Password"
         type="password"
+        InputProps={{
+          style: customStyles,
+        }}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         fullWidth
@@ -43,6 +52,9 @@ const Signup = ({ handleClose }) => {
         variant="outlined"
         label="Confirm Password"
         type="password"
+        InputProps={{
+          style: customStyles,
+        }}
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
         fullWidth
