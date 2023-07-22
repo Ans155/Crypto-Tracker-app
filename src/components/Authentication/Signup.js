@@ -24,6 +24,28 @@ const Signup = ({ handleClose }) => {
       return;
     }
 
+    try {
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      setAlert({
+        open: true,
+        message: `Sign Up Successful. Welcome ${result.user.email}`,
+        type: "success",
+      });
+
+      handleClose();
+    } catch (error) {
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
+      return;
+    }
+
   };
   
 
