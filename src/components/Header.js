@@ -5,6 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { useHistory } from 'react-router-dom';
 import icon from "../images/3888px-Cryptocurrency_Logo.svg.png";
 import { CryptoState } from '../CryptoContext';
+import AuthModal from './Authentication/AuthModal';
 
 
 const useStyles=makeStyles(() => ({
@@ -61,12 +62,7 @@ const Header = () => {
               INR
             </MenuItem>
           </Select>
-          <Button 
-  color="inherit" 
-  onClick={() => history.push("./login")}
->
-  Login
-</Button>
+          <AuthModal/>
 
         </Toolbar>
       </Container>
