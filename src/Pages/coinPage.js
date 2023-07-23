@@ -9,7 +9,7 @@ import { numberWithCommas } from "../components/CoinsTable";
 import { CryptoState } from "../CryptoContext";
 import { Classnames } from "react-alice-carousel";
 
-const coinPage = () => {
+const CoinPage = () => {
   //const parse = require('html-react-parser');
   const{ id }=useParams();
   const [coin, setCoin]=useState();
@@ -164,4 +164,4 @@ const coinPage = () => {
   
 };
 
-export default coinPage
+export default CoinPage

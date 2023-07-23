@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import icon from "../images/3888px-Cryptocurrency_Logo.svg.png";
 import { CryptoState } from '../CryptoContext';
 import AuthModal from './Authentication/AuthModal';
-
+import UserSidebar from './Authentication/UserSidebar';
 
 const useStyles=makeStyles(() => ({
   title:
@@ -26,7 +26,7 @@ const Header = () => {
 
   const classes= useStyles();
   const history=useHistory();
-  const { currency, setCurrency } = CryptoState();
+  const { currency, setCurrency,user } = CryptoState();
   return (
     <AppBar color="white" position="static">
       <Container>
@@ -62,7 +62,7 @@ const Header = () => {
               INR
             </MenuItem>
           </Select>
-          <AuthModal/>
+          {user ? <UserSidebar/> : <AuthModal/>}
 
         </Toolbar>
       </Container>

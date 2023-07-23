@@ -6,6 +6,8 @@ import { useContext } from 'react';
 import { createContext } from 'react';
 
 import {CoinList } from './config/api';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 
 const Crypto=createContext();
 
@@ -27,6 +29,18 @@ const CryptoContext = ({ children}) => {
       setCoins(data);
       setLoading(false);
     };
+
+    useEffect(() => {
+      onAuthStateChanged(auth, user => {
+          if(user) {
+              setUser(user)
+          }
+          else {
+              setUser(null)
+          }
+          console.log(user)
+      })
+  }, []);
     useEffect(() => {
         if (currency === "INR") setSymbol("₹");
         else if (currency === "USD") setSymbol("$");
