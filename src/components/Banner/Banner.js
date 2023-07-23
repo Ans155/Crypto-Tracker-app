@@ -36,7 +36,7 @@ function Banner() {
               fontFamily: "Montserrat",
             }}
           >
-            Crypto Tracker
+            CoinVortex
           </Typography>
           <Typography
             variant="subtitle2"
